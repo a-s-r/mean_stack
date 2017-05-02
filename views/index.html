@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <title>ng2</title>
+
+    <!-- 1. Load libraries -->
+    <!-- 1.1. Polyfills for browser incompatibility -->
+    <!-- 1.2. SystemJS for importing dependencies when required -->
+    <!-- 1.3. RxJS requirement for AngularJS -->
+    <!-- 1.4. AngularJS for other features -->
+    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+    <script src="node_modules/angular2/bundles/http.dev.js"></script>
+
+    <script>
+        System.config({
+        packages: {        
+          app: {
+            format: 'register',
+            defaultExtension: 'js'
+          }
+        }
+      });
+
+      //just like calling  main method in c# java c++
+      //bootstraping ngular2 application
+      System.import('app/boot')
+            .then(null, console.error.bind(console));
+    </script>
+
+</head>
+
+<body>    
+  <app-comp>loading ap componenet</app-comp>
+    
+</body>
+
+</html>

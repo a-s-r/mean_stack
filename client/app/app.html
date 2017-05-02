@@ -1,0 +1,41 @@
+<h1>{{title}}</h1>
+<p>{{message}}</p>
+
+<div>
+    <input type="text" [(ngModel)]="trainerId" />
+    <button (click)="getTrainerById()">Search</button>
+</div>
+
+<table *ngIf="trainer">
+    <tr>
+        <td>Id</td>
+        <strong>{{trainer.id}}</strong>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <strong>{{trainer.name}}</strong>
+    </tr>
+    <tr>
+        <td>Course</td>
+        <strong>{{trainer.course}}</strong>
+    </tr>
+    <tr>
+        <td>Exp</td>
+        <strong>{{trainer.exp}}</strong>
+    </tr>
+</table>
+
+<table>
+    <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>Course</td>
+        <td>Exp</td>
+    </tr>
+    <tr *ngFor="#t of trainers">
+        <td>{{t.id}}</td>
+        <td>{{t.name}}</td>
+        <td>{{t.course}}</td>
+        <td>{{t.exp}}</td>
+    </tr>
+</table>
